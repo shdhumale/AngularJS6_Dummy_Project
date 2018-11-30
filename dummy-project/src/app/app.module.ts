@@ -15,6 +15,7 @@ import { AdminService } from './admin.service';
 import { HttpClientModule} from '@angular/common/http';
 import { AuthGuard } from './auth.guard';
 import { LogoutComponent } from './logout/logout.component';
+import { ChangePipe } from './change.pipe';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { LogoutComponent } from './logout/logout.component';
     LoginComponent,
     DashboardComponent,
     AdminComponent,
-    LogoutComponent
+    LogoutComponent,
+    ChangePipe
   ],
   imports: [
     BrowserModule,

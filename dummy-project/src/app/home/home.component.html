@@ -1,6 +1,10 @@
 <div id="maindiv">
   <p class='fontClass'>
-    This is Home Main page that will be displayed to the user
+    <!-- implemented inbuild pipe -->
+    {{ amount | currency: formate }}
+    <button (click)="ToggleCurrency()">Toggle Currency</button>
+    {{"this is formated with custom pipes" | change : true : "singlequote"}}
+        
   </p>
   <div class="button">
     <a [routerLink]="[ '/dashboard']">Dash Board</a>

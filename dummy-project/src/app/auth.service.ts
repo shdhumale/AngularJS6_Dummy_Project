@@ -16,7 +16,7 @@ export class AuthService {
     return this.myhttpClient.post<registerUserData>('/registerapi', [username, password, cpassword]);
   }
 
-  logInUser(usrename : string, password : string) {
-    return this.myhttpClient.post<logInUserData>('/loginapi',[usrename,password ]);
+  logInUser(username : string, password : string) {
+    return this.myhttpClient.post<logInUserData>('/loginapi',[username,password ]);
   }
 }
