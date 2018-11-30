@@ -1,3 +1,4 @@
+import { AuthGuard } from './../auth.guard';
 import { AuthService } from './../auth.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
@@ -12,7 +13,7 @@ export class LoginComponent implements OnInit {
 
   errors= [];
 
-  constructor(private myRouter: Router, private myService: AuthService) { }
+  constructor(private myRouter: Router, private myService: AuthService, private myAuthGuard: AuthGuard) { }
 
   ngOnInit() {
   }
@@ -22,16 +23,16 @@ export class LoginComponent implements OnInit {
 
     if((form.controls['username'].value === '') || (form.controls['password'].value === '')  )
     {
-        this.errors.push("Enter data in UserName or Password field");
+        this.errors.push('Enter data in UserName or Password field');
     }
-    if(!(this.errors.length > 0))
-    {
+    if(!(this.errors.length > 0)) {
       this.myService.logInUser(form.controls['username'].value, form.controls['password'].value).subscribe(
         data => {
           console.log('We got login data', data);
           if (form.controls['username'].value === data[0].username && form.controls['password'].value === data[0].password)
           {
             console.log('successful logged in');
+            this.myAuthGuard.setFlag(true);
             this.myRouter.navigate(['dashboard']);
           } else {
             alert('Logged in fail');

@@ -1,3 +1,4 @@
+import { AuthGuard } from './../auth.guard';
 import { AuthService } from './../auth.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
@@ -14,7 +15,7 @@ import { FormsModule, NgForm } from '@angular/forms';
 export class RegisterComponent implements OnInit {
   errors = [];
 
-  constructor(private myRouter: Router, private myAuthService: AuthService) { }
+  constructor(private myRouter: Router, private myAuthService: AuthService, private myAuthGuard: AuthGuard) { }
 
   ngOnInit() {
   }
@@ -32,13 +33,15 @@ export class RegisterComponent implements OnInit {
 
     if(!(this.errors.length > 0))
     {
+      // tslint:disable-next-line:max-line-length
       this.myAuthService.registerUser(form.controls['username'].value, form.controls['password'].value, form.controls['cpassword'].value).subscribe(
         data => {
             console.log('We got data', data[0].status);
             if (data[0].status)
             {
               console.log('successful Registered');
-                this.myRouter.navigate(['dashboard']);
+              this.myAuthGuard.setFlag(true);
+              this.myRouter.navigate(['dashboard']);
             } else {
               alert('Registration fail');
               this.errors.push('Registration fail');
