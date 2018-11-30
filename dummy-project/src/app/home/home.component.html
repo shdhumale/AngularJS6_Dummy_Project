@@ -4,8 +4,10 @@
     {{ amount | currency: formate }}
     <button (click)="ToggleCurrency()">Toggle Currency</button>
     {{"this is formated with custom pipes" | change : true : "singlequote"}}
-        
-  </p>
+   </p>
+   <p appSiddhucustome>
+      this is custome directive example.
+   </p>
   <div class="button">
     <a [routerLink]="[ '/dashboard']">Dash Board</a>
   </div>
@@ -14,5 +16,5 @@
   </div>
   <div class="button">
     <a [routerLink]="[ '/login']">Login</a>
-  </div>
+  </div>  
 </div>

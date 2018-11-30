@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  message = "This is Home Main page that will be displayed to the user";
+  message = "This is Home Main page that will be displayed to the user GD-CSP [Guard-Directive-Component-Service-Pipe]";
   amountValue = 600;
   formateValue = 'INR';
   constructor() { }

@@ -16,6 +16,7 @@ import { HttpClientModule} from '@angular/common/http';
 import { AuthGuard } from './auth.guard';
 import { LogoutComponent } from './logout/logout.component';
 import { ChangePipe } from './change.pipe';
+import { SiddhucustomeDirective } from './siddhucustome.directive';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { ChangePipe } from './change.pipe';
     DashboardComponent,
     AdminComponent,
     LogoutComponent,
-    ChangePipe
+    ChangePipe,
+    SiddhucustomeDirective
   ],
   imports: [
     BrowserModule,
