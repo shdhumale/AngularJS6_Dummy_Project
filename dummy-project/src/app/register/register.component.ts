@@ -40,8 +40,9 @@ export class RegisterComponent implements OnInit {
             if (data[0].status)
             {
               console.log('successful Registered');
-              this.myAuthGuard.setFlag(true);
-              this.myRouter.navigate(['dashboard']);
+              //this.myAuthGuard.setFlag(true);
+              //this.myRouter.navigate(['dashboard']);
+              this.myRouter.navigate(['login']);
             } else {
               alert('Registration fail');
               this.errors.push('Registration fail');

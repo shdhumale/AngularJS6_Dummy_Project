@@ -1,4 +1,6 @@
+import { AuthGuard } from './../auth.guard';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor() { }
+  constructor(private myrouter: Router, private myAuthGuard: AuthGuard) { }
 
   ngOnInit() {
+  }
+
+  logOut()
+  {
+    //this.myAuthGuard.setFlag(false);
+    localStorage.setItem('flag', 'false');
+    this.myrouter.navigate(['home']);
   }
 
 }

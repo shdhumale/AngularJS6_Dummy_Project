@@ -19,17 +19,3 @@ background-color: #45a049;
         margin-top: 0;
     }
 }
-
-.fontClass
-  {
-    text-align: center;
-    color: #3e8e41;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-style: italic;    
-  }
-
-  .container {
-    border-radius: 5px;
-    background-color: #f2f2f2;
-    padding: 20px;
-}

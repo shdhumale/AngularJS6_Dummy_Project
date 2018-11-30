@@ -7,7 +7,8 @@ import { Observable } from 'rxjs';
 })
 export class AuthGuard implements CanActivate {
 
-    flag: boolean;
+    //flag: boolean;
+    flag = JSON.parse(localStorage.getItem('flag')|| 'false');
 
     constructor(private myrouter: Router)
     {
@@ -17,6 +18,7 @@ export class AuthGuard implements CanActivate {
   setFlag(value: boolean)
   {
     this.flag = value;
+    localStorage.setItem('flag', 'true');
   }
 
   canActivate(

@@ -14,6 +14,7 @@ import { DashboardService } from './dashboard.service';
 import { AdminService } from './admin.service';
 import { HttpClientModule} from '@angular/common/http';
 import { AuthGuard } from './auth.guard';
+import { LogoutComponent } from './logout/logout.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { AuthGuard } from './auth.guard';
     RegisterComponent,
     LoginComponent,
     DashboardComponent,
-    AdminComponent
+    AdminComponent,
+    LogoutComponent
   ],
   imports: [
     BrowserModule,
