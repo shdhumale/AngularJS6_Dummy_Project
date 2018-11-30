@@ -14,11 +14,4 @@ export class DashboardComponent implements OnInit {
   ngOnInit() {
   }
 
-  logOut()
-  {
-    //this.myAuthGuard.setFlag(false);
-    localStorage.setItem('flag', 'false');
-    this.myrouter.navigate(['home']);
-  }
-
 }

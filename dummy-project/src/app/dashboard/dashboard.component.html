@@ -2,5 +2,8 @@
 <p class='fontClass'>
   dashboard works!
 </p>
-<button (click)="logOut()" [ngClass]="{'button': true}"> Log Out</button>
+<!-- <button (click)="logOut()" [ngClass]="{'button': true}"> Log Out</button> -->
+<div>
+  <a [routerLink]="[ '/logout']" [ngClass]="{'button': true}">Log Out</a>
+</div>
 </div>

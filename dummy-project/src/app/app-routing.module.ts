@@ -1,3 +1,4 @@
+import { LogoutComponent } from './logout/logout.component';
 import { AdminComponent } from './admin/admin.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { LoginComponent } from './login/login.component';
@@ -25,6 +26,10 @@ const routes: Routes = [
     path : 'dashboard',
     component: DashboardComponent,
     canActivate: [AuthGuard]
+  },
+  {
+    path : 'logout',
+    component: LogoutComponent
   },
   {
     path : 'admin',

@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 .button {
    
     background-color: #4CAF50;
@@ -27,7 +31,7 @@ background-color: #45a049;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-style: italic;    
   }
-
+  
   .container {
     border-radius: 5px;
     background-color: #f2f2f2;
