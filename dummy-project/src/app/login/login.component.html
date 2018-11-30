@@ -1,0 +1,27 @@
+<div class="container">
+    <p class='fontClass'>
+      This is Login page that will be displayed to the user when the user click on Login button.
+    </p>
+    <form #loginForm="ngForm" (ngSubmit)="logInUser(loginForm)">
+      <div class="row">
+        <div class="col-25">
+          <label for="username">User Name</label>
+        </div>
+        <div class="col-75">
+          <input type="text" id="username" name="username" placeholder="User Name.."  [(ngModel)]="username">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-25">
+          <label for="password">Password</label>
+        </div>
+        <div class="col-75">
+          <input type="password" id="password" name="password" placeholder="Password.."  [(ngModel)]="password">
+        </div>
+      </div>      
+      <div class="row">
+        <input type="submit" value="Submit">
+        <button (click)="goBack()" [ngClass]="{'button': true}"> Go Back</button>
+    </div> 
+    </form>
+  </div>
